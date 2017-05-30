@@ -45,6 +45,7 @@ console.log(blankFills);
 }
 
 function checkLetters(letter) {
+
     var isInWord=false;
 
     for (var i = 0; i<letterBlanks; i++) {
@@ -52,7 +53,8 @@ function checkLetters(letter) {
             isInWord=true;
         }
     }
-    if(isInWord){
+
+    if(isInWord) {
         for (var i=0; i<letterlanks; i++) {
             if(randomWord[i] == letter) {
                 blankFills[i] = letter;
@@ -64,10 +66,13 @@ function checkLetters(letter) {
         wrongLetters.push(letter);
         guessesLeft--
     }
-}
+
 
     console.log(blankFills);
+}
 
+
+startGame();
 
     function roundComplete(){
         console.log("Win Count: " + winCount + " | Loss Count: " + lossCount + "| Guesses Left" + guessesLeft);
@@ -99,11 +104,13 @@ function checkLetters(letter) {
     }
 }
 
-startGame();
+// startGame();
 
 document.onkeyup = function(event){
     var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+
     checkLetters(letterGuessed);
+
     roundComplete();
 
     console.log(letterGuessed);
