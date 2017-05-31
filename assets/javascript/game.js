@@ -55,7 +55,7 @@ function checkLetters(letter) {
     }
 
     if(isInWord) {
-        for (var i=0; i<letterlanks; i++) {
+        for (var i=0; i<letterblanks; i++) {
             if(randomWord[i] == letter) {
                 blankFills[i] = letter;
         }
@@ -83,7 +83,7 @@ startGame();
         document.getElementById("wrongGuesses").innerHTML = wrongLetters.join(" ");
 
 
-    if(isInWord.toString() == blankFills.toString()){
+    if(randomWord.toString() == blankFills.join()){
         winCount++;
         alert("You Win!");
 
